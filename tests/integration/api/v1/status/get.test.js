@@ -1,4 +1,4 @@
-test("Get to /api/v1/status should return 200", async () => {
+test("GET to /api/v1/status should return 200", async () => {
   const response = await fetch("http://localhost:3000/api/v1/status");
   expect(response.status).toBe(200);
 
@@ -12,13 +12,3 @@ test("Get to /api/v1/status should return 200", async () => {
   expect(responseBody.dependencies.database.max_connections).toEqual(100);
   expect(responseBody.dependencies.database.opened_connections).toEqual(1);
 });
-
-
-
-
-// {
-//   "updated_at": "2026-06-16T21:46:04.898Z",
-//   "database_version": "PostgreSQL 16.0 on x86_64-pc-linux-musl, compiled by gcc (Alpine 12.2.1_git20220924-r10) 12.2.1 20220924, 64-bit",
-//   "max_connections": "100",
-//   "used_connections": "7"
-// }
